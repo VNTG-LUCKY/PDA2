@@ -7,6 +7,9 @@ plugins {
 android {
     namespace = "com.example.myapplication_pda"
     compileSdk = 35
+    
+    // R.jar 파일 잠금 문제 해결을 위한 빌드 디렉토리 변경
+    buildDir = File(project.rootDir, "build_new")
 
     defaultConfig {
         applicationId = "com.example.myapplication_pda"

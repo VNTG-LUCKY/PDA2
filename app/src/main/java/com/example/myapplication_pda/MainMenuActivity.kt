@@ -1,5 +1,6 @@
 package com.example.myapplication_pda
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
@@ -79,7 +80,15 @@ class MainMenuActivity : AppCompatActivity() {
             holder.icon.setImageResource(item.iconRes)
             holder.title.text = item.title
             holder.itemView.setOnClickListener {
-                Toast.makeText(holder.itemView.context, "${item.title} 클릭됨", Toast.LENGTH_SHORT).show()
+                when (item.title) {
+                    "적재대조회" -> {
+                        val intent = Intent(holder.itemView.context, StorageInquiryActivity::class.java)
+                        holder.itemView.context.startActivity(intent)
+                    }
+                    else -> {
+                        Toast.makeText(holder.itemView.context, "${item.title} 클릭됨", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
         override fun getItemCount() = items.size

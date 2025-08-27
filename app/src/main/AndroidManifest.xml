@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".MainMenuActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".StorageInquiryActivity" android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
     </application>
 
 </manifest>
