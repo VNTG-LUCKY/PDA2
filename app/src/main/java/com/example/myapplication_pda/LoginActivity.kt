@@ -23,13 +23,45 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val id = editTextId.text.toString()
             val password = editTextPassword.text.toString()
+            
+            // 입력 유효성 검사
+            if (id.isEmpty()) {
+                editTextId.error = "사원번호를 입력해주세요"
+                return@setOnClickListener
+            }
+            
+            if (password.isEmpty()) {
+                editTextPassword.error = "비밀번호를 입력해주세요"
+                return@setOnClickListener
+            }
+            
+            // 로그인 처리
             if (id == "Seah" && password == "1234") {
+                // 로그인 성공 시 버튼 비활성화 (중복 클릭 방지)
+                btnLogin.isEnabled = false
+                btnLogin.text = "로그인 중..."
+                
+                // 실제 환경에서는 네트워크 요청을 여기서 처리
+                // 현재는 즉시 메인 메뉴로 이동
                 val intent = Intent(this, MainMenuActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                Toast.makeText(this, "아이디 또는 패스워드가 올바르지 않습니다.", Toast.LENGTH_SHORT).show()
+                // 로그인 실패 시 에러 메시지 표시
+                editTextPassword.error = "사원번호 또는 비밀번호가 올바르지 않습니다"
+                Toast.makeText(this, "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        // 엔터키 처리
+        editTextId.setOnEditorActionListener { _, _, _ ->
+            editTextPassword.requestFocus()
+            true
+        }
+        
+        editTextPassword.setOnEditorActionListener { _, _, _ ->
+            btnLogin.performClick()
+            true
         }
     }
 } 

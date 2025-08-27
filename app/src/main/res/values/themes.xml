@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.MyApplication_pda" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- 세아제강 PDA 시스템 메인 테마 -->
+    <style name="Theme.MyApplication_pda" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/seah_primary</item>
+        <item name="colorPrimaryDark">@color/seah_primary_dark</item>
+        <item name="colorAccent">@color/seah_accent</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/seah_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/seah_background</item>
+        <item name="android:textColorPrimary">@color/seah_text_primary</item>
+        <item name="android:textColorSecondary">@color/seah_text_secondary</item>
+    </style>
 </resources>
