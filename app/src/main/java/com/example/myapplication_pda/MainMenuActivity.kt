@@ -81,6 +81,10 @@ class MainMenuActivity : AppCompatActivity() {
             holder.title.text = item.title
             holder.itemView.setOnClickListener {
                 when (item.title) {
+                    "내수상차" -> {
+                        val intent = Intent(holder.itemView.context, DomesticShipmentActivity::class.java)
+                        holder.itemView.context.startActivity(intent)
+                    }
                     "적재대조회" -> {
                         val intent = Intent(holder.itemView.context, StorageInquiryActivity::class.java)
                         holder.itemView.context.startActivity(intent)

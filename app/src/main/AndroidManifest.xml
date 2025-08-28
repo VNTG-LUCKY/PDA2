@@ -25,6 +25,7 @@
         <activity android:name=".MainMenuActivity" android:theme="@style/Theme.MyApplication_pda" />
         <activity android:name=".MainActivity" android:theme="@style/Theme.MyApplication_pda" />
         <activity android:name=".StorageInquiryActivity" android:theme="@style/Theme.MyApplication_pda" />
+        <activity android:name=".DomesticShipmentActivity" android:theme="@style/Theme.MyApplication_pda" />
     </application>
 
 </manifest>
