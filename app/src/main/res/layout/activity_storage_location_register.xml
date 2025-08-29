@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#2196F3"
+        android:paddingHorizontal="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="뒤로가기" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="적재위치등록"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnNotification"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_notification"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="알림" />
+
+                <TextView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/notification_badge"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_menu"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="메뉴" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Form Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="#F5F5F5">
+
+        <!-- 적재대스캔 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="적재대스캔"
+                android:textColor="#d84315"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_camera"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="스캔" />
+
+                <EditText
+                    android:id="@+id/etPalletScan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="적재대스캔"
+                    android:inputType="text"
+                    android:padding="0dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 적재대구분 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="적재대구분"
+                android:textColor="#d84315"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/tvStorageType"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_background"
+                android:text="선택"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_down"
+                android:contentDescription="선택" />
+        </LinearLayout>
+
+        <!-- 적재대번호 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="적재대번호"
+                android:textColor="#d84315"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/tvStorageNo"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_background"
+                android:text="적재대번호를 선택하세요."
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_down"
+                android:contentDescription="선택" />
+        </LinearLayout>
+
+        <!-- 바코드 + CNT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="바코드"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_camera"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="스캔" />
+
+                <EditText
+                    android:id="@+id/etBarcode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="바코드"
+                    android:inputType="text"
+                    android:padding="0dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CNT"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCnt"
+                android:layout_width="56dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@drawable/spinner_background"
+                android:text="0" />
+        </LinearLayout>
+
+        <!-- 정상/분수변경 + 분수 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <RadioGroup
+                android:id="@+id/rgStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="정상"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/rbFraction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="본수변경" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="본수"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tvFraction"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@drawable/spinner_background"
+                android:text="본수" />
+        </LinearLayout>
+
+        <!-- 입력 버튼 -->
+        <Button
+            android:id="@+id/btnInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="입력"
+            android:textStyle="bold"
+            android:background="@drawable/button_background"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Table Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
+
+        <!-- Table Header -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scrollbars="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#E0E0E0"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="8dp">
+
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="일자" android:textStyle="bold" android:gravity="center" android:textColor="#FFFFFF" />
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="시간" android:textStyle="bold" android:gravity="center" android:textColor="#FFFFFF" />
+                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="배치번호" android:textStyle="bold" android:gravity="center" android:textColor="#FFFFFF" />
+                <TextView android:layout_width="60dp" android:layout_height="wrap_content" android:text="순번" android:textStyle="bold" android:gravity="center" android:textColor="#FFFFFF" />
+                <TextView android:layout_width="60dp" android:layout_height="wrap_content" android:text="본수" android:textStyle="bold" android:gravity="center" android:textColor="#FFFFFF" />
+                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="주문번호" android:textStyle="bold" android:gravity="center" android:textColor="#FFFFFF" />
+                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="행번" android:textStyle="bold" android:gravity="center" android:textColor="#FFFFFF" />
+                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="포장일자" android:textStyle="bold" android:gravity="center" android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Table Content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="등록된 데이터가 없습니다"
+                    android:textColor="#999999" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

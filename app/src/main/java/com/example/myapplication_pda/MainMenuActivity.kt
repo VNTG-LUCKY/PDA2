@@ -89,6 +89,14 @@ class MainMenuActivity : AppCompatActivity() {
                         val intent = Intent(holder.itemView.context, StorageInquiryActivity::class.java)
                         holder.itemView.context.startActivity(intent)
                     }
+                    "적재위치등록" -> {
+                        val intent = Intent(holder.itemView.context, StorageLocationRegisterActivity::class.java)
+                        holder.itemView.context.startActivity(intent)
+                    }
+                    "적재위치조회" -> {
+                        val intent = Intent(holder.itemView.context, StorageInquiryActivity::class.java)
+                        holder.itemView.context.startActivity(intent)
+                    }
                     else -> {
                         Toast.makeText(holder.itemView.context, "${item.title} 클릭됨", Toast.LENGTH_SHORT).show()
                     }
