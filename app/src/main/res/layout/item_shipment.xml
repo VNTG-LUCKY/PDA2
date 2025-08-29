@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/seah_surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 상단: 주문번호와 상태 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvOrderNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SH001"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/seah_text_primary"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="배송 중"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/status_background"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <!-- 제품명과 수량 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제품: "
+                android:textSize="14sp"
+                android:textColor="@color/seah_text_secondary"/>
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="철근"
+                android:textSize="14sp"
+                android:textColor="@color/seah_text_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="수량: "
+                android:textSize="14sp"
+                android:textColor="@color/seah_text_secondary"/>
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100톤"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/seah_primary"/>
+        </LinearLayout>
+
+        <!-- 배송지 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="배송지: "
+                android:textSize="14sp"
+                android:textColor="@color/seah_text_secondary"/>
+
+            <TextView
+                android:id="@+id/tvDestination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="서울시 강남구"
+                android:textSize="14sp"
+                android:textColor="@color/seah_text_primary"/>
+        </LinearLayout>
+
+        <!-- 날짜 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날짜: "
+                android:textSize="14sp"
+                android:textColor="@color/seah_text_secondary"/>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2024-01-15"
+                android:textSize="14sp"
+                android:textColor="@color/seah_text_primary"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

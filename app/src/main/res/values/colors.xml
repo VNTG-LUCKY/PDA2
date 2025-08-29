@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 기존 색상 -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- 세아제강 CI 컬러 -->
+    <color name="seah_primary">#1E3A8A</color>          <!-- 메인 파란색 -->
+    <color name="seah_primary_dark">#1E40AF</color>     <!-- 어두운 파란색 -->
+    <color name="seah_primary_light">#3B82F6</color>    <!-- 밝은 파란색 -->
+    <color name="seah_accent">#2563EB</color>           <!-- 강조 파란색 -->
+    <color name="seah_secondary">#64748B</color>        <!-- 보조 회색 -->
+    <color name="seah_background">#F8FAFC</color>       <!-- 배경색 -->
+    <color name="seah_surface">#FFFFFF</color>          <!-- 표면색 -->
+    <color name="seah_error">#EF4444</color>            <!-- 오류색 -->
+    <color name="seah_success">#10B981</color>          <!-- 성공색 -->
+    <color name="seah_warning">#F59E0B</color>          <!-- 경고색 -->
+    <color name="seah_text_primary">#1F2937</color>     <!-- 주요 텍스트 -->
+    <color name="seah_text_secondary">#6B7280</color>   <!-- 보조 텍스트 -->
+    <color name="seah_border">#E5E7EB</color>           <!-- 테두리색 -->
 </resources>
