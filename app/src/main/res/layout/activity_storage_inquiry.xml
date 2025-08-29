@@ -3,18 +3,418 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="#FFFFFF"
-    android:padding="24dp">
+    android:background="#FFFFFF">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Top Bar (Header) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="#2196F3"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="뒤로가기" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="적재위치조회"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Notification Bell -->
+        <ImageButton
+            android:id="@+id/btnNotification"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_notification"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="알림" />
+
+        <!-- Menu Button -->
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_menu"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="메뉴" />
+
+    </LinearLayout>
+
+    <!-- Search/Filter Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="안녕하세요"
-        android:textSize="32sp"
-        android:textColor="#333333"
-        android:textStyle="bold"
-        android:gravity="center" />
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F5F5F5">
+
+        <!-- Row 1: 바코드 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="바코드"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_camera"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/etBarcode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="바코드"
+                    android:textSize="14sp"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Row 2: 자재코드 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="자재코드"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <EditText
+                android:id="@+id/etMaterialCode"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edittext_background"
+                android:hint="자재코드"
+                android:textSize="14sp"
+                android:paddingHorizontal="12dp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <!-- Row 3: 판매오더 + 행번 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="판매오더"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <EditText
+                android:id="@+id/etSalesOrder"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edittext_background"
+                android:hint="판매오더"
+                android:textSize="14sp"
+                android:paddingHorizontal="12dp"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="행번"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp" />
+
+            <EditText
+                android:id="@+id/etLineNumber"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edittext_background"
+                android:hint="행번"
+                android:textSize="14sp"
+                android:paddingHorizontal="12dp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <!-- Row 4: 배치번호 + 순번 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="배치번호"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <EditText
+                android:id="@+id/etBatchNumber"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edittext_background"
+                android:hint="배치번호"
+                android:textSize="14sp"
+                android:paddingHorizontal="12dp"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="순번"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <EditText
+                    android:id="@+id/etSequenceNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="순번"
+                    android:textSize="14sp"
+                    android:inputType="text" />
+
+                <ImageView
+                    android:id="@+id/ic_search"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_search"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Row 5: FROM + TO Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="FROM"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <EditText
+                    android:id="@+id/etFromDate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="2025-08-27"
+                    android:textSize="14sp"
+                    android:inputType="date" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calendar"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="TO"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <EditText
+                    android:id="@+id/etToDate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="2025-08-27"
+                    android:textSize="14sp"
+                    android:inputType="date" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calendar"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Table Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="#E0E0E0"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="구분"
+            android:textSize="12sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="적재위치"
+            android:textSize="12sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="배치번호"
+            android:textSize="12sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="배치순번"
+            android:textSize="12sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="본수"
+            android:textSize="12sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Content Area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="검색 결과가 없습니다"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:gravity="center" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
 

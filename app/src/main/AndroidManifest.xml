@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication_pda"
         tools:targetApi="31">
+        
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -22,9 +23,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenuActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".StorageInquiryActivity" android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        
+        <activity 
+            android:name=".MainMenuActivity" 
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            
+        <activity 
+            android:name=".StorageInquiryActivity" 
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            
+        <activity 
+            android:name=".StorageLocationRegisterActivity" 
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>
